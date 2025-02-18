@@ -9,6 +9,9 @@ loginForm.addEventListener('submit', (event) => { //evento al enviar el formular
     if (username.value === 'admin' && password.value === 'admin') {
         succesMessage.style.display = 'block';
         succesMessage.innerText = 'Login Exitoso';
+        setTimeout(() => {
+            window.location.href = "./html/home.html";
+        }, 2000);
     }else{
         alert('Usuario o contraseña incorrectos');
     }
