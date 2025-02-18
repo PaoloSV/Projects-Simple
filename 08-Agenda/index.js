@@ -10,11 +10,21 @@ form.addEventListener('submit',(event) => {
     listItem.textContent = `${name} - ${tel}`;
     //*crea un boton para eliminar el contacto
     const deleteBtn = document.createElement('button');
+    const editBtn = document.createElement('button');
     deleteBtn.textContent = 'Eliminar'
+    editBtn.textContent = 'Editar'
     deleteBtn.addEventListener('click',() => {
         listItem.remove();
     })
+    editBtn.addEventListener('click',() => {
+        const newName = prompt('Ingrese el nuevo nombre'); //CUADRO DE DIALOGO
+        const newTel = prompt('Ingrese el nuevo telefono');
+        listItem.innerHTML = `${newName} - ${newTel}`;
+        listItem.appendChild(deleteBtn); 
+        listItem.append(editBtn);
+    })
     listItem.appendChild(deleteBtn); //agrega el boton al li
+    listItem.append(editBtn);
     document.querySelector('.contacList').appendChild(listItem);
     form.reset(); //limpia los campos del formulario
 })
