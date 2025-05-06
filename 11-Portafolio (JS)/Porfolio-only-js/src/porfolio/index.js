@@ -51,18 +51,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Formulario de contacto
   const contactForm = document.querySelector(".contact-form")
-  if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault()
+  // if (contactForm) {
+  //   contactForm.addEventListener("submit", (e) => {
+  //     e.preventDefault()
 
-      // Aquí puedes agregar la lógica para enviar el formulario
-      // Por ejemplo, usando fetch para enviar los datos a un servidor
+  //     // Aquí puedes agregar la lógica para enviar el formulario
+  //     // Por ejemplo, usando fetch para enviar los datos a un servidor
 
-      // Simulación de envío exitoso
-      alert("¡Mensaje enviado con éxito! Te responderé lo antes posible.")
-      contactForm.reset()
-    })
-  }
+  //     // Simulación de envío exitoso
+  //     alert("¡Mensaje enviado con éxito! Te responderé lo antes posible.")
+  //     contactForm.reset()
+  //   })
+  // }
 
   // Animación de aparición al hacer scroll
   const observerOptions = {
