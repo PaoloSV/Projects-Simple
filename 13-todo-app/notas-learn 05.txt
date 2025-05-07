@@ -1,0 +1,108 @@
+Archivo de texto donde tomo notas para aprender mientras aprendo
+Store 
+    La idea del Store es que cuando nuestros componentes o nuestas piesas que van a construir la 
+    aplicacion, cuando necesiten iformacion recurrir al componente padre, podemos colocar toda 
+    la informacion que es relavante para nuestra aplicacion en espacio especial llamado store.
+    --Formal--
+    El Store es un patrón de diseño que sirve para centralizar el manejo del estado de una aplicación.
+    Este espacio especial almacena toda la información relevante que necesitan los componentes para 
+    interactuar entre sí
+    ¿Por qué usar una Store?
+        *Cuando tienes múltiples componentes en tu aplicación, puede ser complicado mantener el 
+        estado sincronizado entre ellos.
+        *En lugar de pasar datos a través de muchos niveles de componentes ( prop Drilling ), 
+        STORE actúa como un único punto de verdad.
+        *Los componentes pueden "suscribirse" a la Tienda para obtener datos o actualizar el 
+        estado global.
+    
+Idea del Store en esta todo-app
+    la idea va ser que los componentes cuando requiran informacion de nuestro store, tenga que ir
+    al Archivo y consultarlo.
+
+nota: 
+    tambien podriamos usar librerias para usar "reactividad"
+    def: 
+        cuando un obj es reactivo significa que nosotros podemos saber cuando cambia.
+    esto aun no lo vamos aplicar
+
+METODOS QUE AUN NO CONOZCO EN JS USADOS EN ESTA APP 
+
+*array.filter(callback(element, index, array), thisArg);
+    El método filter() en JavaScript se utiliza para crear un nuevo array con todos los elementos que cumplan con una condición definida en una función de callback. 
+    Básicamente, sirve para filtrar elementos de un array según un criterio.
+    ejm 
+    filtra numeros mayores a 10
+    const numbers = [5, 12, 8, 130, 44];
+    const result = numbers.filter(num => num > 10);
+    console.log(result); // [12, 130, 44]
+
+*array.map(callback(element, index, array), thisArg);
+    El método .map() en JavaScript se utiliza para crear un nuevo array transformando los elementos del array original mediante una función de callback.
+    ejm
+    const numbers = [1, 2, 3, 4, 5];
+    const doubled = numbers.map(num => num * 2);
+    console.log(doubled); // [2, 4, 6, 8, 10]
+
+*element.closest(selector);
+    El método .closest() en JavaScript es muy útil cuando necesitas encontrar el ancestro más cercano de un elemento en el DOM que coincida con un selector CSS. 
+    Este método sube en la jerarquía del árbol DOM desde el elemento actual hasta el elemento raíz del documento.
+
+ejm 
+    <div class="container">
+        <div class="card">
+            <button id="miBoton">Haz clic aquí</button>
+        </div>
+    </div>
+
+
+const boton = document.getElementById('miBoton');
+const contenedor = boton.closest('.container'); // Buscar el ancestro más cercano con la clase "container"
+console.log(contenedor); // Devuelve el div con clase "container"
+
+----------------------------local y session store------------------------------
+localStorage y sessionStorage son dos formas de almacenamiento web que permiten guardar datos 
+en el navegador del usuario de manera sencilla.
+
+
+localStorage y sessionStorage 
+son dos formas de almacenamiento web que permiten guardar datos en el navegador del usuario de manera sencilla. 
+Ambos son parte de la API de almacenamiento web (Web Storage) y comparten algunas similitudes, pero tienen diferencias importantes relacionadas 
+con el tiempo de vida de los datos.
+
+*Similitudes entre localStorage y sessionStorage
+->Almacenamiento clave-valor: Los datos se guardan como pares clave-valor (ambas deben ser cadenas de texto).
+->Tamaño: Tienen una capacidad de almacenamiento similar, generalmente de 5 a 10 MB según el navegador.
+->API simple: Ambos utilizan métodos similares como setItem, getItem, removeItem, y clear.
+->Datos disponibles solo en el navegador: La información guardada no se envía al servidor automáticamente; 
+    solo está disponible en el navegador del usuario.
+
+*diferencias
+->Persistencia de datos:
+localStorage: Los datos persisten incluso después de cerrar el navegador o reiniciar la computadora.
+sessionStorage: Los datos se eliminan automáticamente al cerrar la pestaña o ventana del navegador.
+
+->Alcance de los datos:
+localStorage: Los datos son accesibles desde todas las pestañas o ventanas que compartan el mismo dominio.
+sessionStorage: Los datos son exclusivos de la pestaña o ventana en la que se guardaron.
+
+->Uso típico:
+localStorage: Se utiliza para almacenar datos que deben mantenerse a largo plazo, como configuraciones de usuario o 
+tokens de autenticación.
+sessionStorage: Se usa para datos temporales, como el estado de un formulario o 
+información que solo tiene sentido durante la sesión actual.
+
+->Eliminación de datos:
+localStorage: Los datos deben eliminarse manualmente mediante código (removeItem o clear) o desde las herramientas del navegador.
+sessionStorage: Los datos se eliminan automáticamente al cerrar la pestaña o ventana.
+
+------------------------------------JSON----------------------------------
+
+JSON (JavaScript Object Notation) 
+es un formato ligero de intercambio de datos. Es fácil de leer y escribir para los humanos, y fácil de analizar y generar para las máquina
+*JSON es texto simple escrito en notación de objetos JavaScript.
+*JSON se utiliza para enviar datos entre computadoras.
+*JSON es independiente del lenguaje. 
+
+--metodos mas comunes-- 
+*JSON.stringify(obj) -> convierte a JSON un objeto en JS.
+*JSON.parse(json) -> convierte a obj un JSON.
